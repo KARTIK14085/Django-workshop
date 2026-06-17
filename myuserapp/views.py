@@ -10,3 +10,10 @@ def contact(request):
     return render(request,'contact.html')
 def shop(request):
     return render(request,'shop.html')
+def contactprocess(request):
+    a = int(request.POST['txt1'])
+    b = int(request.POST['txt2'])
+    c = a + b
+   
+    return render(request,'ans.html',{'mya':a,'myb':b,'myc':c})
+                  
