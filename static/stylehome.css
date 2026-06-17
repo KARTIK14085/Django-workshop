@@ -1,0 +1,23 @@
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 30px;
+   background-color: rgb(235, 239, 239);
+    justify-content: center;
+    width: 0px 15px;
+     color: rgb(8, 8, 8);
+}
+nav{
+font-size: medium;
+padding: 20px;;
+width:100%;
+box-shadow: 2px gray;
+border-radius: 3px;
+background-color: aliceblue;
+text-align: center;
+justify-content:space-between;
+gap: 5;
+}
+h1{
+    text-align: center;
+}

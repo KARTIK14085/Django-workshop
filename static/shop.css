@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 20px;
+    font-family: system-ui, sans-serif;
+}
+
+.main{
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+
+    /* 3 boxes per row */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.product{
+    border: 2px solid black;
+    border-radius: 20px;
+
+    background-color: azure;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.product img{
+    width: 200px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.product h3{
+    margin: 10px 0;
+
+    color: white;
+
+    background-color: blue;
+
+    padding: 10px;
+
+    border-radius: 10px;
+}
