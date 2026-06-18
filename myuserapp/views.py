@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -30,4 +30,40 @@ def contactprocess(request):
         d = "F"
 
     return render(request,'ans.html',{'mya':a,'myb':b,'myc':c,'myd':d})
+
+def savesessiondata(request):
+    msg=request.session['username']="LUCIFER"
+    return HttpResponse("session created",msg)
+
+def savesessiondata2(request):
+    msg=request.session['username']="LUCIFER"
+    return HttpResponse("session created 2",msg)
+
+def getsessiondata(request):
+    msg=request.session.has_key('username')
+    return HttpResponse("get created",msg)
+
+def delsessiondata(request):
+    msg=request.session['username']
+    return HttpResponse("session delete",msg)
+
+def login(request):
+    return render(request,'login.html')
+
+def loginprocess(request):
+    txt1= request.POST['username']
+    request.session['username']="LUCIFER"
+    return redirect(dashboard)
+
+def dashboard(request):
+    if request.session.has_key('username'):
+        return render(request,"dashboard.html")
+    else:
+        return redirect(login)
+
+def logout(request):
+    del request.session['username']
+    return redirect(login)
+
+
                   

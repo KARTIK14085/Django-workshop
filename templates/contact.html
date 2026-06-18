@@ -9,6 +9,7 @@
 <body>
     {% include 'menu.html' %}
     <h1>welcome contact</h1>
+    <div class="form">
         <form method="post" action="/contactprocess">
         {% csrf_token %}
             Student Name : <input type="text" name="name" required>
@@ -17,5 +18,6 @@
             Science :<input type="number" name="txt3" min="0" max="100" required>
             <input type="submit"/>
         </form>
+    </div>    
 </body>
 </html>
