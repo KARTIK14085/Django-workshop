@@ -13,7 +13,21 @@ def shop(request):
 def contactprocess(request):
     a = int(request.POST['txt1'])
     b = int(request.POST['txt2'])
-    c = a + b
-   
-    return render(request,'ans.html',{'mya':a,'myb':b,'myc':c})
+    e = int(request.POST['txt3'])
+    c = a + b + e
+    d=""
+    if c >= 90:
+        d = "A+"
+    elif  c>= 80:
+        d = "A"
+    elif  c >= 70:
+        d = "B"
+    elif  c >= 60:
+        d = "C"
+    elif  c >= 50:
+        d = "D"
+    else:
+        d = "F"
+
+    return render(request,'ans.html',{'mya':a,'myb':b,'myc':c,'myd':d})
                   
