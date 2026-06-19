@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'contact.css'%} "/>
 </head>
 <body>
-    {% include 'menu.html' %}
     <h1>welcome contact</h1>
+    <div class="nav">
+    {% include 'menu.html' %}
+    </div>
     <div class="form">
         <form method="post" action="/contactprocess">
         {% csrf_token %}
