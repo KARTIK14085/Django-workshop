@@ -6,10 +6,10 @@ from .models import student
 
 # Create your views here.
 def mailsenddemo(request):
-    subject = 'Welcome to Facebook '
-    message = ' You are Selected as CEO Position'
+    subject = 'Welcome '
+    message = ' thank you for choosing us'
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['.com',]
+    recipient_list = ['kartik123489@gmail.com',]
     send_mail( subject, message, email_from, recipient_list )
     return HttpResponse("Mail Sent")
 
@@ -100,6 +100,24 @@ def studentformprocess(request):
     txt3 = request.POST['txt3']
     txt4 = request.POST['txt4']
     student.objects.create(sname=txt1,email=txt2,mobile=txt3,address=txt4)
-    return HttpResponse("thank you")
+    return HttpResponse("Thank you for Contacting us.")
+   # mymsg1 = f"Hello, {txt1} has contacted you. Email is {txt2}. Contact is {txt3}. Address is {txt4}"
+
+    #subject = 'Contact us from website'
+    #email_from = settings.EMAIL_HOST_USER
+
+   # message = mymsg1
+  #  recipient_list = ['k@gmail.com',]
+  #  send_mail( subject, message, email_from, recipient_list )
+def displaystudent(request):
+    mystudentlist = student.objects.all()
+    return render(request,'displaystudent.html',{'mydata':mystudentlist})
+
+def deletestudent(request,id):
+    student.objects.get(id=id).delete()
+    return redirect(displaystudent)
+
+
+    
     
                   

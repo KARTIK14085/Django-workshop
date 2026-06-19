@@ -18,7 +18,11 @@ urlpatterns = [
     path('logout', views.logout),
     path('maildemo',views.mailsenddemo),
     path('emailform',views.emailform),
-     path('studentform',views.studentform),
-      path('studentformprocess',views.studentformprocess)         
+    path('studentform',views.studentform),
+    path('studentformprocess',views.studentformprocess), 
+
+    path('displaystudent',views.displaystudent),
+    path('deletestudent/<int:id>',views.deletestudent),
+    
     
 ]
